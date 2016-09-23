@@ -145,7 +145,7 @@ branches:
 notifications:
   email:
     recipients:
-      - panopoly-ci@googlegroups.com
+      - meatsack@gmail.com
     on_success: always
     on_failure: always
   irc:
