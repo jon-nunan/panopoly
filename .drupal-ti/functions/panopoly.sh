@@ -62,6 +62,7 @@ function panopoly_build_distribution() {
 	drush make --yes profiles/panopoly/drupal-org-core.make --prepare-install
 	drush make --yes profiles/panopoly/drupal-org.make --no-core --contrib-destination=profiles/panopoly
 	if [[ "$INSTALL_PANOPOLY_DEMO_FROM_APPS" != 1 ]]; then
+	    panopoly_header Downloading Panopoly Demo
 		drush dl panopoly_demo-1.x-dev
 	fi
 	drush dl diff
