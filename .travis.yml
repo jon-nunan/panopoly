@@ -148,8 +148,3 @@ notifications:
       - meatsack@gmail.com
     on_success: always
     on_failure: always
-  irc:
-    channels:
-      - "chat.freenode.net#panopoly"
-    on_success: always
-    on_failure: always
