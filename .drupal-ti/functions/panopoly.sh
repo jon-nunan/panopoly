@@ -147,7 +147,8 @@ function drupal_ti_install_drupal() {
 		# Relax checks as drush site-install has errors for update 1.13.
 		set +e
 	fi
-	php -d sendmail_path=$(which true) ~/.composer/vendor/bin/drush.php --yes -d site-install panopoly --db-url="$DRUPAL_TI_DB_URL" --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Panopoly"
+	php -d sendmail_path=$(which true) ~/.composer/vendor/bin/drush.php --yes site-install panopoly --db-url="$DRUPAL_TI_DB_URL" --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="Panopoly"
+	drush asl
 	drush vset -y file_private_path "sites/default/private/files"
 	drush vset -y file_temporary_path "sites/default/private/temp"
 
