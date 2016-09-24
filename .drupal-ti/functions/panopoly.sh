@@ -64,6 +64,8 @@ function panopoly_build_distribution() {
 	if [[ "$INSTALL_PANOPOLY_DEMO_FROM_APPS" != 1 ]]; then
 	    panopoly_header Downloading Panopoly Demo
 		drush dl panopoly_demo-1.x-dev
+		drush dl panopoly_news-1.x-dev
+		drush dl panopoly_faq-1.x-dev
 	fi
 	drush dl diff
 	mkdir -p sites/default/private/files
