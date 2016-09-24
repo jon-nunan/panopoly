@@ -126,6 +126,8 @@ mysql:
   encoding: utf8
 
 before_install:
+  # disable xdebug for speed.
+  - phpenv config-rm xdebug.ini
   - composer self-update
   - composer global require "lionsad/drupal_ti:dev-master"
   - drupal-ti before_install
