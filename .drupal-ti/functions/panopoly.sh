@@ -1,30 +1,24 @@
 #!/bin/bash
 # @file
 # Common functionality for panopoly distribution.
+
 #
 # Ensures that the right drush version is installed.
 #
 function panopoly_ensure_drush() {
 	# This function is re-entrant.
-	if [ -r "$TRAVIS_BUILD_DIR/../drupal_ti-drush-installed" ]
+	if [ -r "$TRAVIS_BUILD_DIR/../drupal_ti-panopoly-drush-installed" ]
 	then
 		return
 	fi
 
-	# Check if drush is already available.
-	DRUSH=$(which drush || echo "")
+	drupal_ti_ensure_drush
 
-	if [ -z "$DRUSH" ]
-	then
-		# install drush globally
-		echo "Installing drush: $DRUPAL_TI_DRUSH_VERSION"
-		composer global require --no-interaction "$DRUPAL_TI_DRUSH_VERSION"
-	else
-		echo "Drush $DRUPAL_TI_DRUSH_VERSION is already installed."
-		composer global install --no-interaction
-	fi
+	# Download addon.
+	drush dl -y drupalorg_drush-7.x-1.x-dev --destination=$HOME/.drush
+	drush cc drush
 
-	touch "$TRAVIS_BUILD_DIR/../drupal_ti-drush-installed"
+	touch "$TRAVIS_BUILD_DIR/../drupal_ti-panopoly-drush-installed"
 }
 
 #
