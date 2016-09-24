@@ -121,7 +121,7 @@ cache:
     - $HOME/.drush/cache
 
 mysql:
-  database: drupal_travis_db
+  database: drupall_travis_db
   username: root
   encoding: utf8
 

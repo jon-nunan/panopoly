@@ -134,8 +134,10 @@ function drupal_ti_install_drupal() {
 	panopoly_header Installing Drupal
 	if [[ "$UPGRADE" == none ]]
 	then
+	    panopoly_header No Upgrade
 		cd drupal
 	else
+	    panopoly_header Upgrading..
 		cd panopoly-$UPGRADE
 		if [[ "$INSTALL_PANOPOLY_DEMO_FROM_APPS" != 1 ]]; then
 			drush dl panopoly_demo-$UPGRADE_DEMO_VERSION
