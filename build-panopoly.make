@@ -6,4 +6,5 @@ includes[] = drupal-org-core.make
 
 ; Panopoly
 projects[panopoly][type] = profile
-projects[panopoly][version] = 1.40
+projects[panopoly][download][type] = git
+projects[panopoly][download][url] = https://github.com/jon-nunan/panopoly.git
