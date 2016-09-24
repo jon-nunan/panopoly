@@ -3,6 +3,9 @@
 
 set -e $DRUPAL_TI_DEBUG
 
+# disable xdebug for speed.
+phpenv config-rm xdebug.ini
+
 # Ensure the right Drupal version is installed and upgraded.
 # Note: This runs our custom version of drupal_ti_install_drupal in
 #       .drupal-ti/functions/panopoly.sh.
