@@ -19,6 +19,9 @@ function panopoly_install_tasks(&$install_state) {
   );
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
   $tasks = $tasks + apps_profile_install_tasks($install_state, $panopoly_server);
+  if(drupal_is_cli()) {
+    drush_log('Tasks: ' . print_r($tasks, TRUE), 'notice');
+  }
 
   // Add the Panopoly theme selection to the installation process
   require_once(drupal_get_path('module', 'panopoly_theme') . '/panopoly_theme.profile.inc');
@@ -51,7 +54,9 @@ function panopoly_form_install_configure_form_alter(&$form, $form_state) {
   // Hide some messages from various modules that are just too chatty.
   drupal_get_messages('status');
   drupal_get_messages('warning');
-
+  if(drupal_is_cli()) {
+    drush_log('form: ' . print_r($form, TRUE), 'notice');
+  }
   // Set reasonable defaults for site configuration form
   $form['site_information']['site_name']['#default_value'] = 'Panopoly';
   $form['admin_account']['account']['name']['#default_value'] = 'admin';
