@@ -100,7 +100,7 @@ env:
     - UPGRADE=none
     - UPGRADE=7.x-1.40
     - UPGRADE=7.x-1.39
-    #- UPGRADE=7.x-1.38
+    - UPGRADE=7.x-1.38
     #- UPGRADE=7.x-1.37
     #- UPGRADE=7.x-1.36
     #- UPGRADE=7.x-1.35
