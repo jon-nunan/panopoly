@@ -99,7 +99,7 @@ env:
     - UPGRADE=none     INSTALL_PANOPOLY_DEMO_FROM_APPS=1
     - UPGRADE=none
     - UPGRADE=7.x-1.40
-    #- UPGRADE=7.x-1.39
+    - UPGRADE=7.x-1.39
     #- UPGRADE=7.x-1.38
     #- UPGRADE=7.x-1.37
     #- UPGRADE=7.x-1.36
